@@ -1,4 +1,4 @@
-console.log("hellow");
+// console.log("hellow");
 
 // TASK-- G
 
@@ -19,3 +19,15 @@ console.log("hellow");
 // }
 
 // console.log(getHighestIndex([44, 21, 12, 21, 33]));
+
+
+//H- TASK 
+
+function getPositive(musbat: number[]): string {
+  return musbat
+    .filter((num: number) => num > 0)  
+    .join('');                         
+}
+
+console.log(getPositive([-4, -3, -3 , -1, 1])); 
+
