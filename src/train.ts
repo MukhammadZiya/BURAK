@@ -21,13 +21,20 @@
 // console.log(getHighestIndex([44, 21, 12, 21, 33]));
 
 
-//H- TASK 
+// //H- TASK 
 
-function getPositive(musbat: number[]): string {
-  return musbat
-    .filter((num: number) => num > 0)  
-    .join('');                         
+// function getPositive(musbat: number[]): string {
+//   return musbat
+//     .filter((num: number) => num > 0)  
+//     .join('');                         
+// }
+
+// console.log(getPositive([-4, -3, -3 , -1, 1])); 
+
+// H2 TASK 
+
+function getDigits(input: string): string {
+  return input.split('').filter(char => char >= '0' && char <= '9').join('');
 }
 
-console.log(getPositive([-4, -3, -3 , -1, 1])); 
-
+console.log(getDigits("mfsdfsdfsdfsdf8sdf9s8d7f89s7d98f7s98df")); 
