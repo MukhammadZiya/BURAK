@@ -21,7 +21,8 @@ class Errors extends Error {
 
   constructor(statusCode: HttpCode, statusMessege: Messege) {
     super();
-    (this.code = statusCode), (this.message = statusMessege);
+    this.code = statusCode;
+    this.message = statusMessege;
   }
 }
 

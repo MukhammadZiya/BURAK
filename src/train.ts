@@ -52,3 +52,14 @@
 
   -Error handling  
 */
+
+
+
+
+
+
+/*
+ Traditional API
+ API
+ GraphQL API
+*/
