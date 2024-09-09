@@ -33,8 +33,22 @@
 
 // H2 TASK 
 
-function getDigits(input: string): string {
-  return input.split('').filter(char => char >= '0' && char <= '9').join('');
-}
+// function getDigits(input: string): string {
+//   return input.split('').filter(char => char >= '0' && char <= '9').join('');
+// }
 
-console.log(getDigits("mfsdfsdfsdfsdf8sdf9s8d7f89s7d98f7s98df")); 
+// console.log(getDigits("mfsdfsdfsdfsdf8sdf9s8d7f89s7d98f7s98df")); 
+
+
+//Project Standarts:
+
+/*
+  Logging standarts
+  Naming Standarts:
+    function, method , variable => Camel
+    class => Pascal
+    folder => Kebab
+    css => Snake
+
+  -Error handling  
+*/
