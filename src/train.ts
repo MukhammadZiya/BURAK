@@ -63,3 +63,29 @@
  API
  GraphQL API
 */
+
+
+// TASK - I
+
+
+function majorityElement(arr: number[]): number {
+  let maxCount = 0;
+  let mostFrequent: number | undefined;
+
+  for (const num of arr) {
+    const count = arr.filter(x => x === num).length;
+
+    if (count > maxCount) {
+      maxCount = count;
+      mostFrequent = num;
+    }
+  }
+
+  if (mostFrequent === undefined) {
+    throw new Error("No majority element found.");
+  }
+
+  return mostFrequent;
+}
+
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 5, 5,5 ,])); 
