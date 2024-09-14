@@ -68,24 +68,42 @@
 // TASK - I
 
 
-function majorityElement(arr: number[]): number {
-  let maxCount = 0;
-  let mostFrequent: number | undefined;
+// function majorityElement(arr: number[]): number {
+//   let maxCount = 0;
+//   let mostFrequent: number | undefined;
 
-  for (const num of arr) {
-    const count = arr.filter(x => x === num).length;
+//   for (const num of arr) {
+//     const count = arr.filter(x => x === num).length;
 
-    if (count > maxCount) {
-      maxCount = count;
-      mostFrequent = num;
-    }
-  }
+//     if (count > maxCount) {
+//       maxCount = count;
+//       mostFrequent = num;
+//     }
+//   }
 
-  if (mostFrequent === undefined) {
-    throw new Error("No majority element found.");
-  }
+//   if (mostFrequent === undefined) {
+//     throw new Error("No majority element found.");
+//   }
 
-  return mostFrequent;
+//   return mostFrequent;
+// }
+
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 5, 5,5 ,])); 
+
+
+// Train Js
+
+
+function findLongestWord(sentence: string): string {
+  const words = sentence.match(/\b\w+\b/g) || [];
+
+  let longestWord = words.reduce((longest, current) => {
+    return current.length > longest.length ? current : longest;
+  }, "");
+
+  return longestWord;
 }
 
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 5, 5,5 ,])); 
+const result = findLongestWord("I came from Uzbekistan!");
+console.log(result);
+
