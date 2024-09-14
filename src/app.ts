@@ -6,6 +6,7 @@ import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/config";
+// import router from "./router";
 
 // kirish
 const app = express();

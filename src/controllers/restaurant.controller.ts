@@ -4,71 +4,66 @@ import MemberService from "../models/Member.service";
 import { LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 
-
 const memberService = new MemberService();
-
 
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
   try {
     console.log("goHome");
-    res.render("home");
+    res.render("home"); // home.ejsga yuboradi
   } catch (err) {
-    console.log("Error, goHome", err);
+    console.log("Error, goHome:", err);
   }
 };
-
 restaurantController.getSignup = (req: Request, res: Response) => {
   try {
-    console.log("Sign up");
-    res.render("signup");;
+    console.log("goSingup");
+    res.render("signup");
   } catch (err) {
-    console.log("Error, goSignup", err);
+    console.log("Error, Signup:", err);
   }
 };
 
 restaurantController.getLogin = (req: Request, res: Response) => {
   try {
-    console.log("goHome");
+    console.log("goLogin");
     res.render("login");
   } catch (err) {
-    console.log("Error, goLogin", err);
+    console.log("Error, getLogin:", err);
   }
 };
 
 restaurantController.processSignup = async (req: Request, res: Response) => {
   try {
-    console.log("processLogin");
-    console.log("body", req.body);
+    console.log("processSignup");
+    // console.log("body:", req.body);
 
     const newMember: MemberInput = req.body;
     newMember.memberType = MemberType.RESTAURANT;
-
-    
-
     const result = await memberService.processSignup(newMember);
-    //todo sessions
+    // TODO: SESSIONS AUTHENTICATION
+
     res.send(result);
   } catch (err) {
-    console.log("Error, processSignup", err);
+    console.log("Error, processSignup:", err);
     res.send(err);
   }
+};
 
-  restaurantController.processLogin = async (req: Request, res: Response) => {
-    try {
-      console.log("processLogin");
-      console.log("body:", req.body);
-      const input: LoginInput = req.body;
-      const result = await memberService.processLogin(input);
+restaurantController.processLogin = async (req: Request, res: Response) => {
+  try {
+    console.log("processLogin");
 
-      //todo sessions
+    // console.log("body:", req.body);
+    const input: LoginInput = req.body;
+    const result = await memberService.processLogin(input);
+    // TODO: SESSIONS AUTHENTICATION
 
-      res.send(result);
-    } catch (err) {
-      console.log("Error, processLogin", err);
-      res.send(err);
-    }
-  };
+    res.send(result);
+  } catch (err) {
+    console.log("Error, processLogin:", err);
+    res.send(err);
+  }
 };
 
 export default restaurantController;
