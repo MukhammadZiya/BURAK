@@ -1,3 +1,5 @@
+console.log("2-qadam")
+
 import express from "express";
 import path from "path";
 import router from "./router";
@@ -20,6 +22,6 @@ app.set("view engine", "ejs");
 
 //router
 app.use("/admin", routerAdmin);
-// app.use("/", router); //Middleware design pattern
+app.use("/", router); //Middleware design pattern
 
 export default app;

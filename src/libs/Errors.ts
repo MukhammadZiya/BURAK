@@ -1,3 +1,5 @@
+console.log("9-qadam")
+
 export enum HttpCode {
   OK = 200,
   NOT_MODIFIED = 304,
@@ -22,6 +24,11 @@ export enum Messege {
 class Errors extends Error {
   public code: HttpCode;
   public message: Messege;
+
+  static standard = {
+    code : HttpCode.INTERNAL_SERVER_ERROR,
+    messege: Messege.SOMETHING_WENT_WRONG
+  }
 
   constructor(statusCode: HttpCode, statusMessege: Messege) {
     super();

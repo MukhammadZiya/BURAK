@@ -1,3 +1,5 @@
+console.log("10-qadam")
+
 import { MemberStatus, MemberType } from "../enums/member.enum";
 
 export interface MemberInput {

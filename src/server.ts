@@ -1,3 +1,6 @@
+
+console.log("1-qadam")
+
 import dotenv from 'dotenv';
 dotenv.config();
 import mongoose from 'mongoose';
@@ -14,4 +17,5 @@ const PORT = process.env.PORT ?? 3003 ;
 app.listen(PORT,function () {
   console.log(`The server is running successfully on port: ${PORT}`);
 } )
-}).catch(err => console.log("ERROR on connecting to MongoDB", err));
+}).catch(err => console.log("ERROR on connecting to MongoDB", err)); 
+
