@@ -20,25 +20,23 @@
 
 // console.log(getHighestIndex([44, 21, 12, 21, 33]));
 
-
-// //H- TASK 
+// //H- TASK
 
 // function getPositive(musbat: number[]): string {
 //   return musbat
-//     .filter((num: number) => num > 0)  
-//     .join('');                         
+//     .filter((num: number) => num > 0)
+//     .join('');
 // }
 
-// console.log(getPositive([-4, -3, -3 , -1, 1])); 
+// console.log(getPositive([-4, -3, -3 , -1, 1]));
 
-// H2 TASK 
+// H2 TASK
 
 // function getDigits(input: string): string {
 //   return input.split('').filter(char => char >= '0' && char <= '9').join('');
 // }
 
-// console.log(getDigits("mfsdfsdfsdfsdf8sdf9s8d7f89s7d98f7s98df")); 
-
+// console.log(getDigits("mfsdfsdfsdfsdf8sdf9s8d7f89s7d98f7s98df"));
 
 //Project Standarts:
 
@@ -53,23 +51,15 @@
   -Error handling  
 */
 
-
-
-
-
-
 /*
  Traditional API
  API
  GraphQL API
 */
 
-
-// Cookie => req.join .... => self.destroy 
-
+// Cookie => req.join .... => self.destroy
 
 // TASK - I
-
 
 // function majorityElement(arr: number[]): number {
 //   let maxCount = 0;
@@ -91,11 +81,9 @@
 //   return mostFrequent;
 // }
 
-// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 5, 5,5 ,])); 
-
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 5, 5,5 ,]));
 
 // Train Js
-
 
 // function findLongestWord(sentence: string): string {
 //   const words = sentence.match(/\b\w+\b/g) || [];
@@ -110,6 +98,19 @@
 // const result = findLongestWord("I came from Uzbekistan!");
 // console.log(result);
 
+//TASK - K
 
+function countVowels(input: string): number {
+  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let count = 0;
 
+  for (let char of input) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
 
+  return count;
+}
+
+console.log(countVowels("MIT SILA"));
