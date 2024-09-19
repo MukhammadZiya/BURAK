@@ -65,6 +65,9 @@
 */
 
 
+// Cookie => req.join .... => self.destroy 
+
+
 // TASK - I
 
 
@@ -94,16 +97,19 @@
 // Train Js
 
 
-function findLongestWord(sentence: string): string {
-  const words = sentence.match(/\b\w+\b/g) || [];
+// function findLongestWord(sentence: string): string {
+//   const words = sentence.match(/\b\w+\b/g) || [];
 
-  let longestWord = words.reduce((longest, current) => {
-    return current.length > longest.length ? current : longest;
-  }, "");
+//   let longestWord = words.reduce((longest, current) => {
+//     return current.length > longest.length ? current : longest;
+//   }, "");
 
-  return longestWord;
-}
+//   return longestWord;
+// }
 
-const result = findLongestWord("I came from Uzbekistan!");
-console.log(result);
+// const result = findLongestWord("I came from Uzbekistan!");
+// console.log(result);
+
+
+
 
