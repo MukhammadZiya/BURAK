@@ -16,6 +16,9 @@ memberController.signup = async (req: Request, res: Response) => {
       result: Member = await memberService.signup(input);
     // TODO TOKENS AUTHENTICATION
 
+    
+
+
     res.json({ member: result });
   } catch (err) {
     console.log("Error, signup:", err);
