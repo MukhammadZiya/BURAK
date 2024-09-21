@@ -100,17 +100,20 @@
 
 //TASK - K
 
-function countVowels(input: string): number {
-  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-  let count = 0;
+// function countVowels(input: string): number {
+//   const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+//   let count = 0;
 
-  for (let char of input) {
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
+//   for (let char of input) {
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
 
-  return count;
-}
+//   return count;
+// }
 
-console.log(countVowels("MIT SILA"));
+// console.log(countVowels("MIT SILA"));
+
+
+
