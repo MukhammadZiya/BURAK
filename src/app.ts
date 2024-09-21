@@ -9,6 +9,7 @@ import { MORGAN_FORMAT } from "./libs/config";
 // import router from "./router";
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
+import { T } from "./libs/types/common";
 
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
@@ -37,6 +38,12 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+app.use(function(req,res, next) {
+  const sessioInstance = req.session as T ;
+  res.locals.member = sessioInstance.member;
+  next();
+})
 
 //view
 app.set("views", path.join(__dirname, "views"));
