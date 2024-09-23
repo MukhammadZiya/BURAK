@@ -1,6 +1,5 @@
-console.log("2-qadam");
 
-import express from "express";
+import express, { urlencoded } from "express";
 import path from "path";
 import router from "./router";
 import routerAdmin from "./router-admin";
@@ -19,7 +18,6 @@ const store = new MongoDBStore({
 
 // kirish
 const app = express();
-console.log("_dirname:", __dirname);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
