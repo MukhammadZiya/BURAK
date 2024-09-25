@@ -1,33 +1,34 @@
-console.log("9-qadam")
-
 import MemberModel from "../schema/Member.model";
-import { LoginInput, Member, MemberInput } from "../libs/types/member";
+import { LoginInput, Member, MemberInput, MemberUpdateInput } from "../libs/types/member";
 import Errors, { HttpCode, Messege } from "../libs/Errors";
 import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
+import { shapeIntoMongooseObjectId } from "../libs/config";
 
 class MemberService {
-  updateChosenUser(body: any) {
-    throw new Error("Method not implemented.");
-  }
   getUsers() {
     throw new Error("Method not implemented.");
   }
+  updateChosenUser(body: any) {
+    throw new Error("Method not implemented.");
+  }
+  // updateChosenUser(body: any) {
+  //   throw new Error("Method not implemented.");
+  // }
+  // getUsers() {
+  //   throw new Error("Method not implemented.");
+  // }
   private readonly memberModel;
   constructor() {
     this.memberModel = MemberModel;
   }
 
-
   /** SPA   */
 
-  
   public async signup(input: MemberInput): Promise<Member> {
     const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
 
-
-   
     try {
       const result = await this.memberModel.create(input);
       result.memberPassword = "";
@@ -64,11 +65,25 @@ class MemberService {
   }
 
   // public async getUsers(): Promise<Member[]> {
-  //   const result = await this.memberModel.find()
+  //   const result = await this.memberModel
+  //     .find({ memberType: MemberType.USER })
+  //     .exec();
+  //   if (!result) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_DATA_FOUND);
+
+  //   return result;
   // }
 
+  // public async updateChosenUser(body: any): Promise<Member[]> {
+  //   input._id = shapeIntoMongooseObjectId(input._id);
 
+  //   const result = await this.memberModel
+  //     .findByIdAndUpdate({ _id: input._id }, input, { new: true })
+  //     .exec();
 
+  //   if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Messege.UPDATE_FAILED);
+
+  //   return result;
+  // }
 
   /** SSR   */
 
