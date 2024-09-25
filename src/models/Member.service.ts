@@ -63,6 +63,10 @@ class MemberService {
     return await this.memberModel.findById(member._id).lean().exec();
   }
 
+  // public async getUsers(): Promise<Member[]> {
+  //   const result = await this.memberModel.find()
+  // }
+
 
 
 
