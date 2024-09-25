@@ -7,6 +7,12 @@ import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 
 class MemberService {
+  updateChosenUser(body: any) {
+    throw new Error("Method not implemented.");
+  }
+  getUsers() {
+    throw new Error("Method not implemented.");
+  }
   private readonly memberModel;
   constructor() {
     this.memberModel = MemberModel;

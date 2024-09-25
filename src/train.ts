@@ -120,11 +120,26 @@
 
 // TASK L 
 
-function reverseSentence(sentence: string): string {
-  return sentence
-    .split(" ")
-    .map((word) => word.split("").reverse().join(""))
-    .join(" ");
+// function reverseSentence(sentence: string): string {
+//   return sentence
+//     .split(" ")
+//     .map((word) => word.split("").reverse().join(""))
+//     .join(" ");
+// }
+
+// console.log(reverseSentence("we like coding!"));
+
+
+//TASK M
+
+function getSquareNumber(arr: number[]){
+  let newArr = [];
+
+  for(let i = 0; i < arr.length; i++) {
+   newArr.push({number: arr[i], square: arr[i]*arr[i]})
+  }
+
+  return newArr
 }
 
-console.log(reverseSentence("we like coding!"));
+console.log(getSquareNumber([15,27,39]));
