@@ -132,14 +132,37 @@
 
 //TASK M
 
-function getSquareNumber(arr: number[]){
-  let newArr = [];
+// function getSquareNumber(arr: number[]){
+//   let newArr = [];
 
-  for(let i = 0; i < arr.length; i++) {
-   newArr.push({number: arr[i], square: arr[i]*arr[i]})
+//   for(let i = 0; i < arr.length; i++) {
+//    newArr.push({number: arr[i], square: arr[i]*arr[i]})
+//   }
+
+//   return newArr
+// }
+
+// console.log(getSquareNumber([15,27,39]));
+
+
+
+//TASK N
+
+
+function birxilmi(str : String) {
+  let rev = str.split("").reverse().join("");
+
+  if (rev == str) {
+      return true
   }
+  return false
 
-  return newArr
 }
 
-console.log(getSquareNumber([15,27,39]));
+let str1 = "ona";
+let str2 = "men";
+let str3 = "121";
+
+console.log(birxilmi(str1));
+console.log(birxilmi(str2));
+console.log(birxilmi(str3));
