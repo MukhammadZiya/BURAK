@@ -149,20 +149,36 @@
 //TASK N
 
 
-function birxilmi(str : String) {
-  let rev = str.split("").reverse().join("");
+// function birxilmi(str : String) {
+//   let rev = str.split("").reverse().join("");
 
-  if (rev == str) {
-      return true
-  }
-  return false
+//   if (rev == str) {
+//       return true
+//   }
+//   return false
 
+// }
+
+// let str1 = "ona";
+// let str2 = "men";
+// let str3 = "121";
+
+// console.log(birxilmi(str1));
+// console.log(birxilmi(str2));
+// console.log(birxilmi(str3));
+
+
+// TASK - O 
+
+
+function calculateSumOfNumbers(arr: any ) {
+  let sum = 0;
+  arr.forEach((item: number) => {
+      if (typeof item === 'number') {
+          sum += item;
+      }
+  });
+  return sum;
 }
 
-let str1 = "ona";
-let str2 = "men";
-let str3 = "121";
-
-console.log(birxilmi(str1));
-console.log(birxilmi(str2));
-console.log(birxilmi(str3));
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35, 50]));
