@@ -171,14 +171,26 @@
 // TASK - O 
 
 
-function calculateSumOfNumbers(arr: any ) {
-  let sum = 0;
-  arr.forEach((item: number) => {
-      if (typeof item === 'number') {
-          sum += item;
-      }
-  });
-  return sum;
+// function calculateSumOfNumbers(arr: any ) {
+//   let sum = 0;
+//   arr.forEach((item: number) => {
+//       if (typeof item === 'number') {
+//           sum += item;
+//       }
+//   });
+//   return sum;
+// }
+
+// console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35, 50]));
+
+
+
+//TASK -P 
+
+
+function objectToArray (obj:Object) {
+
+  return Object.entries(obj);
 }
 
-console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35, 50]));
+console.log(objectToArray( {a: 1, b: 2}));
