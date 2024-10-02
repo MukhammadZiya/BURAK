@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 console.log("Users frontend javascript file");
 
 $(function () {
@@ -8,7 +6,7 @@ $(function () {
       memberStatus = $(`#${id}.member-status`).val();
 
     axios
-      .post("admin/user/edit", {
+      .post("/admin/user/edit", {
         _id: id,
         memberStatus: memberStatus,
       })

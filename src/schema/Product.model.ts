@@ -25,6 +25,11 @@ const productSchema = new Schema(
       required: true,
     },
 
+    productPrice: {
+      type: Number,
+      required: true,
+    },
+
     productLeftCount: {
       type: Number,
       required: true,
