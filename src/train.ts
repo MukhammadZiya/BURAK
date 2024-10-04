@@ -207,7 +207,7 @@ console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
 console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); 
 
 
-TASK R 
+//TASK R 
 
 function calculate(expression: string) {
   const numbers = expression.split(' + ').map(Number);
