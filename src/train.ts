@@ -196,7 +196,18 @@
 // console.log(objectToArray( {a: 1, b: 2}));
 
 
-// TASK R 
+//TASK Q
+
+function hasProperty(obj: object, property:string) {
+  return property in obj;
+}
+
+// Misollar uchun foydalanish
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); 
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); 
+
+
+TASK R 
 
 function calculate(expression: string) {
   const numbers = expression.split(' + ').map(Number);
