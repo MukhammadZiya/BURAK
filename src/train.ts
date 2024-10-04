@@ -188,9 +188,21 @@
 //TASK -P 
 
 
-function objectToArray (obj:Object) {
+// function objectToArray (obj:Object) {
 
-  return Object.entries(obj);
+//   return Object.entries(obj);
+// }
+
+// console.log(objectToArray( {a: 1, b: 2}));
+
+
+// TASK R 
+
+function calculate(expression: string) {
+  const numbers = expression.split(' + ').map(Number);
+  const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+  return sum;
 }
 
-console.log(objectToArray( {a: 1, b: 2}));
+console.log(calculate("1 + 3")); 
+console.log(calculate("10 + 20")); 
