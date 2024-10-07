@@ -115,10 +115,7 @@
 
 // console.log(countVowels("MIT SILA"));
 
-
-
-
-// TASK L 
+// TASK L
 
 // function reverseSentence(sentence: string): string {
 //   return sentence
@@ -128,7 +125,6 @@
 // }
 
 // console.log(reverseSentence("we like coding!"));
-
 
 //TASK M
 
@@ -144,10 +140,7 @@
 
 // console.log(getSquareNumber([15,27,39]));
 
-
-
 //TASK N
-
 
 // function birxilmi(str : String) {
 //   let rev = str.split("").reverse().join("");
@@ -167,9 +160,7 @@
 // console.log(birxilmi(str2));
 // console.log(birxilmi(str3));
 
-
-// TASK - O 
-
+// TASK - O
 
 // function calculateSumOfNumbers(arr: any ) {
 //   let sum = 0;
@@ -183,10 +174,7 @@
 
 // console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35, 50]));
 
-
-
-//TASK -P 
-
+//TASK -P
 
 // function objectToArray (obj:Object) {
 
@@ -195,25 +183,36 @@
 
 // console.log(objectToArray( {a: 1, b: 2}));
 
-
 //TASK Q
 
-function hasProperty(obj: object, property:string) {
-  return property in obj;
+// function hasProperty(obj: object, property:string) {
+//   return property in obj;
+// }
+
+// // Misollar uchun foydalanish
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
+
+// //TASK R
+
+// function calculate(expression: string) {
+//   const numbers = expression.split(' + ').map(Number);
+//   const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+//   return sum;
+// }
+
+// console.log(calculate("1 + 3"));
+// console.log(calculate("10 + 20"));
+
+// TASK S
+
+function missingNumber(arr: number[]): number {
+  const n = arr.length; 
+  const expectedSum = (n * (n + 1)) / 2; 
+  const actualSum = arr.reduce((sum, num) => sum + num, 0); 
+  return expectedSum - actualSum; 
 }
 
-// Misollar uchun foydalanish
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); 
+// Example usage
+console.log(missingNumber([4, 0, 3, 1])); 
 
-
-//TASK R 
-
-function calculate(expression: string) {
-  const numbers = expression.split(' + ').map(Number);
-  const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-  return sum;
-}
-
-console.log(calculate("1 + 3")); 
-console.log(calculate("10 + 20")); 
