@@ -206,13 +206,26 @@
 
 // TASK S
 
-function missingNumber(arr: number[]): number {
-  const n = arr.length; 
-  const expectedSum = (n * (n + 1)) / 2; 
-  const actualSum = arr.reduce((sum, num) => sum + num, 0); 
-  return expectedSum - actualSum; 
+// function missingNumber(arr: number[]): number {
+//   const n = arr.length;
+//   const expectedSum = (n * (n + 1)) / 2;
+//   const actualSum = arr.reduce((sum, num) => sum + num, 0);
+//   return expectedSum - actualSum;
+// }
+
+// // Example usage
+// console.log(missingNumber([4, 0, 3, 1]));
+
+//TASK T
+
+function mergeArrays(arr1: number[], arr2: number[]): number[] {
+  let arr3 = arr1.concat(arr2);
+  arr3.sort((a, b) => a - b);
+  return arr3;
 }
 
-// Example usage
-console.log(missingNumber([4, 0, 3, 1])); 
+let arr1: number[] = [1, 3, 5, 7];
+let arr2: number[] = [2, 4, 6, 8];
+let arr3: number[] = mergeArrays(arr1, arr2);
 
+console.log(arr3.join(" "));
