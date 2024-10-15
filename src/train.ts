@@ -218,14 +218,36 @@
 
 //TASK T
 
-function mergeArrays(arr1: number[], arr2: number[]): number[] {
-  let arr3 = arr1.concat(arr2);
-  arr3.sort((a, b) => a - b);
-  return arr3;
+// function mergeArrays(arr1: number[], arr2: number[]): number[] {
+//   let arr3 = arr1.concat(arr2);
+//   arr3.sort((a, b) => a - b);
+//   return arr3;
+// }
+
+// let arr1: number[] = [1, 3, 5, 7];
+// let arr2: number[] = [2, 4, 6, 8];
+// let arr3: number[] = mergeArrays(arr1, arr2);
+
+// console.log(arr3.join(" "));
+
+
+
+// TASK V 
+
+function countChars(input: string): { [key: string]: number } {
+  const charCount: { [key: string]: number } = {};
+
+  for (const char of input) {
+      if (charCount[char]) {
+          charCount[char]++;
+      } else {
+          charCount[char] = 1;
+      }
+  }
+
+  return charCount;
 }
 
-let arr1: number[] = [1, 3, 5, 7];
-let arr2: number[] = [2, 4, 6, 8];
-let arr3: number[] = mergeArrays(arr1, arr2);
 
-console.log(arr3.join(" "));
+const result = countChars("hello");
+console.log(result); 
