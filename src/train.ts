@@ -234,20 +234,20 @@
 
 // TASK V 
 
-function countChars(input: string): { [key: string]: number } {
-  const charCount: { [key: string]: number } = {};
+// function countChars(input: string): { [key: string]: number } {
+//   const charCount: { [key: string]: number } = {};
 
-  for (const char of input) {
-      if (charCount[char]) {
-          charCount[char]++;
-      } else {
-          charCount[char] = 1;
-      }
-  }
+//   for (const char of input) {
+//       if (charCount[char]) {
+//           charCount[char]++;
+//       } else {
+//           charCount[char] = 1;
+//       }
+//   }
 
-  return charCount;
-}
+//   return charCount;
+// }
 
 
-const result = countChars("hello");
-console.log(result); 
+// const result = countChars("hello");
+// console.log(result); 
