@@ -39,7 +39,7 @@ class MemberService {
           memberNick: input.memberNick,
           memberStatus: { $ne: MemberStatus.DELETE },
         },
-        { memberNick: 1, memberPassword: 1 , MemberStatus: 1}
+        { memberNick: 1, memberPassword: 1, MemberStatus: 1 }
       )
       .exec();
     if (!member) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_MEMBER_NICK);
@@ -56,6 +56,19 @@ class MemberService {
     }
 
     return await this.memberModel.findById(member._id).lean().exec();
+  }
+
+  public async getMemberDetail(member: Member): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+    const result = await this.memberModel
+      .findOne({ _id: memberId, memberStatus: MemberStatus.ACTIVE })
+      .exec();
+      if(!result) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_DATA_FOUND)
+
+
+
+    return result
+
   }
 
   /** SSR */
