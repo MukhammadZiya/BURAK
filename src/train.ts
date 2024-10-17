@@ -251,3 +251,21 @@
 
 // const result = countChars("hello");
 // console.log(result); 
+
+
+// TASK W 
+
+function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
+  const result: T[][] = [];
+  
+  for (let i = 0; i < arr.length; i += chunkSize) {
+      const chunk = arr.slice(i, i + chunkSize);
+      result.push(chunk);
+  }
+  
+  return result;
+}
+
+
+const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+console.log(result); 
