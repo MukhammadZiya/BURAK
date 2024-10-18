@@ -18,6 +18,17 @@ class MemberService {
   }
 
   /** SPA */
+  public async getRestaurant(): Promise<Member> {
+    const result = await this.memberModel
+      .findOne({ memberType: MemberType.RESTAURANT })
+      .lean()
+      .exec();
+
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_DATA_FOUND);
+
+    return result;
+  }
+
   public async signup(input: MemberInput): Promise<Member> {
     const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
@@ -92,9 +103,8 @@ class MemberService {
       .limit(4)
       .exec();
 
-
-      if(!result) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_DATA_FOUND)
-    return  result;
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_DATA_FOUND);
+    return result;
   }
 
   /** SSR */
