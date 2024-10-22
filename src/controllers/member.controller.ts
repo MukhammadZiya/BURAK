@@ -108,7 +108,7 @@ memberController.updateMember = async (req: ExtendedRequest, res: Response) => {
     console.log("updateMember");
 
     const input: MemberUpdateInput = req.body;
-    if (req.file) input.memberImage = req.file.path.replace(/\\/, "/");
+    if (req.file) input.memberImage = req.file.path.replace(/\\/g, "/");
     const result = await memberService.updateMember(req.member, input);
 
     res.status(HttpCode.OK).json(result);

@@ -10,12 +10,17 @@ import {
 import ProductModel from "../schema/Product.model";
 import { T } from "../libs/types/common";
 import { ObjectId } from "mongoose";
+import ViewService from "./View.service";
+import { ViewInput } from "../libs/types/view";
+import { ViewGroup } from "../libs/enums/view.enum";
 
 class ProductService {
   private readonly productModel;
+  public viewService;
 
   constructor() {
     this.productModel = ProductModel;
+    this.viewService = new ViewService();
   }
 
   /** SPA */
@@ -55,15 +60,51 @@ class ProductService {
   ): Promise<Product> {
     const productId = shapeIntoMongooseObjectId(id);
 
-    let result = await this.productModel.findOne({
-      _id: productId, productStatus: ProductStatus.PROCESS,
-    }).exec()
+    let result = await this.productModel
+      .findOne({
+        _id: productId,
+        productStatus: ProductStatus.PROCESS,
+      })
+      .exec();
 
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_DATA_FOUND)
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Messege.NO_DATA_FOUND);
 
-      // TODO: if authentificated => first => view log creation
+    if (memberId) {
+      // Check Existence
+      const input: ViewInput = {
+        memberId: memberId,
+        viewRefId: productId,
+        viewGroup: ViewGroup.PRODUCT,
+      };
 
-      return result
+      const existView = await this.viewService.checkViewExistence(input);
+
+      console.log("exist:", !!existView);
+      if (!existView) {
+        // Insert View
+        await this.viewService.insertMemberView(input);
+
+        // Increase Counts
+        result = await this.productModel
+          .findByIdAndUpdate(
+            productId,
+            { $inc: { productViews: +1 } },
+            { new: true }
+          )
+          .exec();
+      } else {
+        // If view exists, just increment the product views
+        result = await this.productModel
+          .findByIdAndUpdate(
+            productId,
+            { $inc: { productViews: +1 } },
+            { new: true }
+          )
+          .exec();
+      }
+    }
+
+    return result;
   }
 
   /** SSR */
