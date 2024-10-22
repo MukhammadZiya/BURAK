@@ -230,9 +230,7 @@
 
 // console.log(arr3.join(" "));
 
-
-
-// TASK V 
+// TASK V
 
 // function countChars(input: string): { [key: string]: number } {
 //   const charCount: { [key: string]: number } = {};
@@ -248,44 +246,49 @@
 //   return charCount;
 // }
 
-
 // const result = countChars("hello");
-// console.log(result); 
+// console.log(result);
 
-
-// TASK W 
+// TASK W
 
 // function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
 //   const result: T[][] = [];
-  
+
 //   for (let i = 0; i < arr.length; i += chunkSize) {
 //       const chunk = arr.slice(i, i + chunkSize);
 //       result.push(chunk);
 //   }
-  
+
 //   return result;
 // }
 
-
 // const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
-// console.log(result); 
-
+// console.log(result);
 
 // MIT TASK X
 
-function countOccurrences(obj: Record<string, any>, key: string): number {
-  let count = 0;
+// function countOccurrences(obj: Record<string, any>, key: string): number {
+//   let count = 0;
 
-  function search(o: Record<string, any>): void {
-      for (const k in o) {
-          if (k === key) count++;
-          if (typeof o[k] === 'object' && o[k] !== null) search(o[k]);
-      }
-  }
+//   function search(o: Record<string, any>): void {
+//       for (const k in o) {
+//           if (k === key) count++;
+//           if (typeof o[k] === 'object' && o[k] !== null) search(o[k]);
+//       }
+//   }
 
-  search(obj);
-  return count;
+//   search(obj);
+//   return count;
+// }
+
+// const result = countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model');
+// console.log(result);
+
+//  TASK - Y
+
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  return [...new Set(arr1.filter((value) => arr2.includes(value)))];
 }
 
-const result = countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model');
-console.log(result); 
+const result = findIntersection([1, 2, 3], [3, 2, 0]);
+console.log(result); // [2, 3]
