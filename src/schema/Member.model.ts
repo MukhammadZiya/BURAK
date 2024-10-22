@@ -1,4 +1,4 @@
-console.log("8-qadam")
+
 
 import mongoose, { Schema } from "mongoose";
 import { MemberStatus, MemberType } from "../libs/enums/member.enum";
