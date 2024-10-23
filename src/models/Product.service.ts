@@ -92,15 +92,6 @@ class ProductService {
             { new: true }
           )
           .exec();
-      } else {
-        // If view exists, just increment the product views
-        result = await this.productModel
-          .findByIdAndUpdate(
-            productId,
-            { $inc: { productViews: +1 } },
-            { new: true }
-          )
-          .exec();
       }
     }
 
