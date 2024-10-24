@@ -286,9 +286,20 @@
 
 //  TASK - Y
 
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  return [...new Set(arr1.filter((value) => arr2.includes(value)))];
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//   return [...new Set(arr1.filter((value) => arr2.includes(value)))];
+// }
+
+// const result = findIntersection([1, 2, 3], [3, 2, 0]);
+// console.log(result); // [2, 3]
+
+//  TASK - Z
+
+function sumEvens(arr: number[]): number {
+  return arr
+    .filter((value) => value % 2 === 0)
+    .reduce((sum, value) => sum + value, 0);
 }
 
-const result = findIntersection([1, 2, 3], [3, 2, 0]);
-console.log(result); // [2, 3]
+console.log(sumEvens([1, 2, 3]));
+console.log(sumEvens([1, 2, 3, 2]));
